@@ -40,14 +40,34 @@ Para maximizar os seus estudos Fernando deveria levar em conta opções fora as 
 
 Para a sorte do Fernando, o seu amigo Pedro que está no quinto semestre percebeu que seu dilema era muito relacionado a um problema que ele estava estudando na matéria de Desafios da Programação, **o problema da mochila**! 
 
-Busca exaustiva
----------------------------
+Fernando, um novo estudante!
+---------------
 
-Com a ajuda do Pedro, Fernando conseguiu passar na prova que mal havia estudado. Percebendo o quanto seu tempo de estudo foi otimizado ao utilizar do algorítimo, ele decidiu por usa-lo novamente para organizar seus estudos semanais. 
+Com a ajuda de Pedro, Fernando conseguiu passar na prova que mal havia estudado. Percebendo o quanto seu tempo de estudo foi otimizado ao utilizar do algorítimo, ele decidiu por usa-lo novamente para organizar seus estudos semanais. 
 
 De segunda a sexta Fernando tem disponíveis 3 horas por dia para estudar os conteúdos das suas 5 matérias da faculdade. No final de todo seu planejamento, ele teria 35 conteudos para serem estudados em 45 horas, visando as provas finais que estão a três semanas de distância. 
 
+Sendo assim, pediu que seu amigo o explica-se como ele resolveu o problema da mochila para a situação anterior:
 
+[comment]: <> (animação do slide)
+
+A resolução de Pedro para o problema é conhecida como **busca exaustiva!**
+
+Busca exaustiva
+---------------
+
+Vamos começar a pensar em como traduzir essa resolução para código. Precisamos escrever uma função que recebe como entrada os itens e a capacidade da mochila e nos devolve o maior valor possível que cabe na mochila para aqueles itens. Lembrando que cada item possui um valor e um peso. 
+
+??? Checkpoint 
+Você deve ter percebido que o Fernando subestimou o problema de planejar o seus estudos. Qual é a melhor maneira que ele pode combinar as matérias para que possa estudar a maior combinação de pontos possíveis nas 6 horas que ele tem disponível?
+
+::: Gabarito
+Para maximizar os seus estudos Fernando deveria levar em conta opções fora as de maior valor! Assim chegaria que a melhor opção é estudar X, Y, e Z. 
+
+[comment]: <> (Imagem da seleção da opção correta)
+:::
+
+???
 
 
 
