@@ -21,15 +21,29 @@ Esse é o Fernando, um estudante do 4o semestre de engenharia do Insper. Fernand
 Tendo isso em vista, Fernando pensou em uma ideia para tentar se salvar, que consistia em separar toda a máteria em áreas de estudo. Para cada área, Fernando analisou quanto tempo ele demoraria para aprender e a média de quantos pontos cada conteudo correspondeu nas últimas cinco provas dos semestres passados. Com esses dados em mãos, Fernando agora só precisa encontrar a melhor combinação de áreas para estudar. 
 
 
-<div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+<!-- <div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
     <img src="areas.png" alt="áreas de estudo" height="280" width="80%" />
+</div> -->
+
+<div style="height:200px;display:flex;align-items:center;justify-content:space-evenly">
+    <img src="Eletrodinamica.jpg" alt="áreas de estudo" height="120" />
+    <img src="Laboratorios.jpg" alt="áreas de estudo" height="120" />
+    <img src="Maxwell.jpg" alt="áreas de estudo" height="120" />
+    <img src="Ondulatoria.jpg" alt="áreas de estudo" height="120" />
 </div>
 
 
 O primeiro pensamento do estudante foi de estudar as duas maiores áreas em relação a pontução. Assim, ele estudaria Ondulatória e Leis de Maxwell que consumiriam 5,5 horas de estudo e lhe garantiriam 6 pontos na prova. 
 
-<div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+<!-- <div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
     <img src="1escolha.png" alt="primeira escolha" height="280" width="80%" />
+</div> -->
+
+<div style="height:200px;display:flex;align-items:center;justify-content:space-evenly">
+    <!-- <img src="Eletrodinamica.jpg" alt="áreas de estudo" height="120" style="opacity:0.3"/>
+    <img src="Laboratorios.jpg" alt="áreas de estudo" height="120" style="opacity:0.3"/> -->
+    <img src="Maxwell.jpg" alt="áreas de estudo" height="120" />
+    <img src="Ondulatoria.jpg" alt="áreas de estudo" height="120" />
 </div>
 
 
@@ -39,8 +53,14 @@ Você deve ter percebido que o Fernando subestimou o problema de planejar o seus
 ::: Gabarito
 Para maximizar os seus estudos Fernando deveria levar em conta opções fora as de maior valor! Assim chegaria que a melhor opção é estudar Eletrodinâmica, Laboratórios e Leis de Maxwell. 
 
-<div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+<!-- <div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
     <img src="solucao.png" alt="solucao" height="280" width="80%" />
+</div> -->
+
+<div style="height:200px;display:flex;align-items:center;justify-content:space-evenly">
+    <img src="Eletrodinamica.jpg" alt="áreas de estudo" height="120"/>
+    <img src="Laboratorios.jpg" alt="áreas de estudo" height="120"/>
+    <img src="Maxwell.jpg" alt="áreas de estudo" height="120" />
 </div>
 :::
 
@@ -49,6 +69,8 @@ Para maximizar os seus estudos Fernando deveria levar em conta opções fora as 
 Para a sorte do Fernando, o seu amigo Pedro que está no quinto semestre percebeu que seu dilema era muito relacionado a um problema que ele estava estudando na matéria de Desafios da Programação, **o problema da mochila**! 
 
 Curioso, Fernando pediu para que seu amigo explicasse como resolveu o problema:
+
+:busca
 
 <!-- Fernando, um novo estudante!
 ---------------
@@ -274,6 +296,8 @@ O problema da busca exaustiva
 
 Como vocês devem imaginar após calcular a complexidade da **busca exaustiva** esse não deve ser o melhor algoritmo para resolver o problema da mochila. O principal motivo para essa complexidade alta é a quantidade enorme de **chamadas repetidas** que são feitas ao longo de uma rotina:
 
+:memo
+
 <!-- Animação mostrando as chamadas repetitivas -->
 
 ??? Checkpoint
@@ -328,6 +352,8 @@ Ufa! Conseguimos resolver o problema das várias chamadas repetidas utilizando u
 Esse método de transformar problemas recursivos em iterativos é conhecido como **programação dinâmica**. Ao invés de resolver o problema de maneira recursiva vamos resolve-los de maneira sequencial, utilizando o que já foi calculado para calcular o resultado atual. A estratégia continua basicamente a mesma: analisar se o maior valor é atingido colocando ou não o item atual na mochila. 
 
 Cada linha da matriz representa uma quantidade **n** de itens analisados, cada coluna uma capacidade que vai de **zero até W** e nas células serão guardados os maiores valores possiveis para aquela combinação n e W. A tabela vai sendo preenchida conforme a animação a seguir:
+
+:dinamico
 
 <!-- Animação de preencher a matriz -->
 
