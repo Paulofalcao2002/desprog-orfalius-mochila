@@ -21,19 +21,27 @@ Esse é o Fernando, um estudante do 4o semestre de engenharia do Insper. Fernand
 Tendo isso em vista, Fernando pensou em uma ideia para tentar se salvar, que consistia em separar toda a máteria em áreas de estudo. Para cada área, Fernando analisou quanto tempo ele demoraria para aprender e a média de quantos pontos cada conteudo correspondeu nas últimas cinco provas dos semestres passados. Com esses dados em mãos, Fernando agora só precisa encontrar a melhor combinação de áreas para estudar. 
 
 
-[comment]: <> (Imagem das áreas)
+<div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+    <img src="areas.png" alt="áreas de estudo" height="280" width="80%" />
+</div>
 
-O primeiro pensamento do estudante foi de estudar as duas maiores áreas em relação a pontução. Assim, ele estudaria X e Y que consumiriam 5 horas de estudo e lhe garantiriam 6 pontos na prova. 
 
-[comment]: <> (Imagem da seleção dessa opção)
+O primeiro pensamento do estudante foi de estudar as duas maiores áreas em relação a pontução. Assim, ele estudaria Ondulatória e Leis de Maxwell que consumiriam 5,5 horas de estudo e lhe garantiriam 6 pontos na prova. 
+
+<div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+    <img src="1escolha.png" alt="primeira escolha" height="280" width="80%" />
+</div>
+
 
 ??? Checkpoint 
 Você deve ter percebido que o Fernando subestimou o problema de planejar o seus estudos. Qual é a melhor maneira que ele pode combinar as matérias para que possa estudar a maior combinação de pontos possíveis nas 6 horas que ele tem disponível?
 
 ::: Gabarito
-Para maximizar os seus estudos Fernando deveria levar em conta opções fora as de maior valor! Assim chegaria que a melhor opção é estudar X, Y, e Z. 
+Para maximizar os seus estudos Fernando deveria levar em conta opções fora as de maior valor! Assim chegaria que a melhor opção é estudar Eletrodinâmica, Laboratórios e Leis de Maxwell. 
 
-[comment]: <> (Imagem da seleção da opção correta)
+<div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+    <img src="solucao.png" alt="solucao" height="280" width="80%" />
+</div>
 :::
 
 ???
