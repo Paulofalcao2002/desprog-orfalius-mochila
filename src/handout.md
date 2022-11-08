@@ -257,7 +257,9 @@ k(n) = <
 
 Passo B: Desenhe a árvore de recursão:
 
-<!-- imagem da árvore -->
+<div style="height:500px;display:flex;justify-content:space-evenly;align-items:flex-start;">
+    <img src="arvore.drawio.svg" alt="arvore" width="700"/>
+</div>
 
 Passo C: Estimar a altura *h* da arvore
 ```txt
