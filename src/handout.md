@@ -96,12 +96,27 @@ Isso seria uma abordagem **recursiva** para resolver o problema da mochila! Para
 
 Porém, determinar quais são os subproblemas não é tão simples, envolve determinar qual mochila tem o maior valor: caso colocassemos o item atual na mochila e caso não colocassemos! Isso garante que vamos levar em conta todas as combinações possiveis de itens dentro da mochila e assim vamos conseguir determinar qual o maior valor possivel para essas combinações. 
 
-??? Checkpoint
+<!-- ??? Checkpoint
 Quais os subproblemas necessários para determinar a melhor mochila possível para um universo de 4 itens? Como as duas variáveis da mochila, capacidade e valor, são diferentes nesses subproblemas? 
 ::: Gabarito
 Os dois subproblemas são: a melhor mochila com 3 itens caso não colocassemos o 4º item na mochila e a melhor mochila caso colocassemo o 4º item na mochila!
 
 Para o primeiro subproblema, a capacidade da mochila não se altera, já que não colocamos o item na mochila, e o valor será igual ao valor do subproblema. Já para o segundo subproblema, a capacidade da mochila será a capacidade atual da mochila subtraida do peso do 4º item, e o valor será o valor do subproblema somado do valor do 4º item.
+
+:passo_da_recursao
+:::
+??? -->
+??? Checkpoint
+Vamos considerar uma mochila com capacidade 6 e os dois itens abaixo.
+
+![](cp_n2.png)
+
+Quais os subproblemas necessários para determinar a melhor mochila possível considerando dois itens a serem analisados (**n = 2**)? 
+Como as duas variáveis da mochila, capacidade e valor, são diferentes nesses subproblemas?
+::: Gabarito
+Os dois subproblemas são: a melhor mochila com 1 item caso não colocassemos o 2º item na mochila e a melhor mochila caso colocassemo o 2º item na mochila!
+
+Para o primeiro subproblema, a capacidade da mochila não se altera, já que não colocamos o item na mochila, e o valor será igual ao valor do subproblema. Já para o segundo subproblema, a capacidade da mochila será a capacidade atual da mochila subtraida do peso do 2º item, e o valor será o valor do subproblema somado do valor do 2º item.
 
 :passo_da_recursao
 :::
@@ -113,6 +128,13 @@ Vamos ver se você está entendendo qual é o **passo da recursao** para o probl
 Considerando os valores e pesos dos itens abaixo e n = 3, desenhe as chamadas recursivas de n = 2 e n = 1, e quais os de W e V. 
 
 ![](cp.png)
+
+Faça o desenho no mesmo formato de árvore do checkpoint anterior. Para dar uma facilitada, deixei o começo da árvore pronto para vocês :)
+
+<div style="height:300px;display:flex;align-items:center;justify-content:space-evenly">
+    <img src="cp_arv.png" alt="áreas de estudo" height="300"/>
+</div>
+
 ::: Gabarito
 ![](cp_gabarito.png)
 :::
@@ -136,9 +158,9 @@ Podemos resumir o algoritmo da seguinte maneira:
 
 [comment]: <> (animação do slide)
 
-A resolução de Pedro para o problema é conhecida como **recursão de força bruta!**
+A ideia que Pedro ensinou para o seu amigo é a **solução recursiva** do problema da mochila. 
 
-Recursão de força bruta
+Solução Recursiva 
 ---------------
 
 Vamos começar a pensar em como traduzir essa resolução para código. Precisamos escrever uma função que recebe como entrada os itens e a capacidade da mochila e nos devolve o maior valor possível que cabe na mochila para aqueles itens. Lembrando que cada item possui um valor e um peso.  
@@ -283,7 +305,7 @@ int knapsack(int valores[], int pesos[], int n, int W) {
 Finalmente temos um algoritmo que pode solucionar o problema da mochila! Mas será que essa é a melhor solução possível? 
 
 ??? Checkpoint
-Usando as estratégias vistas em aula, calcule a complexidade do algoritmo da **recursão de força bruta**, utilizando a notação **O**!
+Usando as estratégias vistas em aula, calcule a complexidade do algoritmo da **solução recursiva**, utilizando a notação **O**!
 
 
 :::Gabarito
@@ -344,10 +366,10 @@ Como h <= n, a complexidade é O(2^n)
 :::
 ???
 
-O problema da recursão de força bruta
+O problema da solução recursiva
 -----------------------------
 
-Como vocês devem imaginar após calcular a complexidade da **recursão de força bruta**, esse não deve ser o melhor algoritmo para resolver o problema da mochila. Aliás, ser uma abordagem de força bruta já indica isso. O principal motivo para essa complexidade alta é a quantidade enorme de **chamadas repetidas** que são feitas ao longo de uma rotina:
+Como vocês devem imaginar após calcular a complexidade da **solução recursiva**, esse não deve ser o melhor algoritmo para resolver o problema da mochila. O principal motivo para essa complexidade alta é a quantidade enorme de **chamadas repetidas** que são feitas ao longo de uma rotina:
 
 :memo
 
@@ -407,29 +429,41 @@ Esse método de transformar problemas recursivos em iterativos é conhecido como
 Para uma matriz **n x W**, cada linha **n** representa uma quantidade de itens analisados, e cada capacidade de **zero até W**, uma capacidade para a mochila, e cada célula o **melhor valor** que cabe na mochila para aquela combinação n e W! Vamos considerar como podemos preencher essa matriz considerando que ao contrário da abordagem recursiva, estamos resolvendo o problema de baixo para cima.
 
 ??? Checkpoint
-Quais são os casos triviais em que simplesmente preenchemos a célula da matriz com **zero**?
+Nos casos em que a capacidade da mochila (**W**) é zero e nos casos em que não temos itens a serem analisados (**n = 0**) qual deverá ser o valor da mochila? O que esses casos representavam na solução recursiva do problema?
 ::: Gabarito
-São situações em que a mochila não comporta nenhum item, por não termos nenhum item para ser analisado ou pela capacidade da mochila ser zero. São os mesmos casos considerados na **base da recursão!**
+São situações em que a mochila não comporta nenhum item, por não termos nenhum item para ser analisado ou pela capacidade da mochila ser zero, sendo assim o valor da mochila para esses casos é **zero**. 
+
+São os mesmos casos considerados na **base da recursão!**
 
 :base_matriz
 :::
 ???
 
 ??? Checkpoint
-Ainda pensando sobre como preencher a matriz, como podemos preencher uma célula para o caso em que o item analisado não cabe na mochila?
+<!-- Ainda pensando sobre como preencher a matriz, como podemos preencher uma célula para o caso em que o item analisado não cabe na mochila? -->
+Ainda pensando sobre como preencher a matriz, vamos considerar o caso em que o item não cabe na mochila. Qual o valor da mochila para esse caso? 
+
+Como podemos usar a matriz para descobrir esse valor?
 
 Dica: Assim como o caso anterior, a ideia por trás é muito semelhante ao o que é feito no algoritmo recursivo. 
 ::: Gabarito
-Para esses casos, simplesmente copiamos o melhor valor possível determinado até então para esse valores de n e W. Esse valor é justamente o valor da célula n - 1 e W. 
+O valor da mochila para esse caso é o melhor valor possível para a mochila desconsiderando o item atual.
+
+E como estamos preenchendo a matriz de **baixo para cima** já sabemos que valor é esse, é justamente o melhor valor possível determinado até então para esse valores de n e W, que está na célula n - 1 e W.
 
 :nao_cabe
 :::
 ???
 
 ??? Checkpoint
-Como preenchemos a célula para o caso em que o item cabe na mochila?
+E como você já deve ter adivinhado: Qual o valor da mochila para o caso em que o item cabe na mochila?
+
+Como podemos usar a matriz para descobrir esse valor?
+
 ::: Gabarito
-Assim como na abordagem recursiva nós vamos considerar duas opções: colocar ou não o item na mochila. 
+O valor da mochila é o maior valor dentre as duas opções a seguir: a melhor combinação vista até então sem o item, a melhor combinação dos itens vistos até então com o item atual.
+
+E assim como na abordagem recursiva para descobrir a resposta nós vamos considerar duas opções: colocar ou não o item na mochila. 
 
 Caso não colocássemos, vamos considerar o maior valor possível para aquela capacidade. Esse valor está na célula com n - 1 e W. 
 
