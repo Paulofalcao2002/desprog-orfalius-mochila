@@ -20,11 +20,6 @@ Esse é o Fernando, um estudante do 4° semestre de engenharia do Insper. Fernan
 
 Tendo isso em vista, Fernando pensou em uma ideia para tentar se salvar, que consistia em separar toda a máteria em áreas de estudo. Para cada área, Fernando analisou quanto tempo ele demoraria para aprender e a média de quantos pontos cada conteúdo correspondeu nas últimas cinco provas dos semestres passados. Com esses dados em mãos, Fernando agora só precisa encontrar a melhor combinação de áreas para estudar. 
 
-
-<!-- <div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
-    <img src="areas.png" alt="áreas de estudo" height="280" width="80%" />
-</div> -->
-
 <div style="height:200px;display:flex;align-items:center;justify-content:space-evenly">
     <img src="eletrodinamica.jpg" alt="áreas de estudo" height="120" />
     <img src="laboratorios.jpg" alt="áreas de estudo" height="120" />
@@ -35,13 +30,7 @@ Tendo isso em vista, Fernando pensou em uma ideia para tentar se salvar, que con
 
 O primeiro pensamento do estudante foi de estudar as duas maiores áreas em relação a pontuação. Assim, ele estudaria Ondulatória e Leis de Maxwell que consumiriam 5 horas de estudo e lhe garantiriam 6 pontos na prova. 
 
-<!-- <div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
-    <img src="1escolha.png" alt="primeira escolha" height="280" width="80%" />
-</div> -->
-
 <div style="height:200px;display:flex;align-items:center;justify-content:space-evenly">
-    <!-- <img src="Eletrodinamica.jpg" alt="áreas de estudo" height="120" style="opacity:0.3"/>
-    <img src="Laboratorios.jpg" alt="áreas de estudo" height="120" style="opacity:0.3"/> -->
     <img src="maxwell.jpg" alt="áreas de estudo" height="120" />
     <img src="ondulatoria.jpg" alt="áreas de estudo" height="120" />
 </div>
@@ -52,10 +41,6 @@ Você deve ter percebido que o Fernando subestimou o problema de planejar os seu
 
 ::: Gabarito
 Para maximizar os seus estudos, Fernando deveria levar em conta opções fora as de maior valor! Assim chegaria que a melhor opção é estudar Eletrodinâmica, Laboratórios e Leis de Maxwell. 
-
-<!-- <div style="height:300px;display:flex;justify-content:space-evenly;align-items:flex-start;">
-    <img src="solucao.png" alt="solucao" height="280" width="80%" />
-</div> -->
 
 <div style="height:200px;display:flex;align-items:center;justify-content:space-evenly">
     <img src="eletrodinamica.jpg" alt="áreas de estudo" height="120"/>
@@ -96,31 +81,27 @@ Isso seria uma abordagem **recursiva** para resolver o problema da mochila! Para
 
 Porém, determinar quais são os subproblemas não é tão simples, envolve determinar qual mochila tem o maior valor: caso colocassemos o item atual na mochila e caso não colocassemos! Isso garante que vamos levar em conta todas as combinações possiveis de itens dentro da mochila e assim vamos conseguir determinar qual o maior valor possivel para essas combinações. 
 
-<!-- ??? Checkpoint
-Quais os subproblemas necessários para determinar a melhor mochila possível para um universo de 4 itens? Como as duas variáveis da mochila, capacidade e valor, são diferentes nesses subproblemas? 
-::: Gabarito
-Os dois subproblemas são: a melhor mochila com 3 itens caso não colocassemos o 4º item na mochila e a melhor mochila caso colocassemo o 4º item na mochila!
-
-Para o primeiro subproblema, a capacidade da mochila não se altera, já que não colocamos o item na mochila, e o valor será igual ao valor do subproblema. Já para o segundo subproblema, a capacidade da mochila será a capacidade atual da mochila subtraida do peso do 4º item, e o valor será o valor do subproblema somado do valor do 4º item.
-
-:passo_da_recursao
-:::
-??? -->
 ??? Checkpoint
 Vamos considerar uma mochila com capacidade 6 e os dois itens abaixo.
 
 ![](cp_n2.png)
 
-Quais os subproblemas necessários para determinar a melhor mochila possível considerando dois itens a serem analisados (**n = 2**)? 
+Quais são os subproblemas necessários para determinar a melhor mochila possível considerando dois itens a serem analisados (**n = 2**)? 
 Como as duas variáveis da mochila, capacidade e valor, são diferentes nesses subproblemas?
-::: Gabarito
-Os dois subproblemas são: a melhor mochila com 1 item caso não colocassemos o 2º item na mochila e a melhor mochila caso colocassemo o 2º item na mochila!
 
-Para o primeiro subproblema, a capacidade da mochila não se altera, já que não colocamos o item na mochila, e o valor será igual ao valor do subproblema. Já para o segundo subproblema, a capacidade da mochila será a capacidade atual da mochila subtraida do peso do 2º item, e o valor será o valor do subproblema somado do valor do 2º item.
+
+*Dica: Pense em chamadas recursivas de funções.*
+
+::: Gabarito
+Os dois subproblemas são: a melhor mochila caso não colocassemos o 2º item na mochila e a melhor mochila caso colocassemo o 2º item na mochila! 
+
+O primeiro subproblema equivale ao mesmo problema que o original, porém analisando **n - 1** itens, o que para o caso equivale a 1 item. O segundo também equivale ao mesmo problema que o original, analisando **n - 1** itens, porém com uma nova capacidade para a mochila, **W - peso do item colocado**.
 
 :passo_da_recursao
 :::
 ???
+
+Mas peraí, o que faremos se o item analisado não cabe na mochila? Para esse caso não podemos realizar o segundo subproblema, então vamos levar em conta apenas o resultado do primeiro subproblema!
 
 Vamos ver se você está entendendo qual é o **passo da recursao** para o problema da mochila!
 
@@ -145,7 +126,7 @@ Agora que já dominamos o passo da recursão vamos considerar a **base da recurs
 ??? Checkpoint
 Pense em qual deve ser a base do problema.
 
-Dica: Quais serão as situações em que não conseguiremos mais colocar itens na mochila?
+*Dica: Quais serão as situações em que não conseguiremos mais colocar itens na mochila?*
 ::: Gabarito
 A base da recursão será quando **n = 0**, ou seja, consideramos todos os itens ou **W = 0**, o caso em que não é possível mais preencher a mochila! 
 :::
@@ -163,129 +144,36 @@ A ideia que Pedro ensinou para o seu amigo é a **solução recursiva** do probl
 Solução Recursiva 
 ---------------
 
-Vamos começar a pensar em como traduzir essa resolução para código. Precisamos escrever uma função que recebe como entrada os itens e a capacidade da mochila e nos devolve o maior valor possível que cabe na mochila para aqueles itens. Lembrando que cada item possui um valor e um peso.  
+Vamos começar a pensar em como traduzir essa resolução para código. Precisamos escrever uma função que recebe como entrada os itens e a capacidade da mochila e nos devolve o maior valor possível que cabe na mochila para aqueles itens. Lembrando que cada item possui um valor e um peso. 
 
-??? Checkpoint 
-Considerando que estamos escrevendo uma função em C, como podemos representar os itens, dado que cada item possui um par valor e peso?
+A maneira mais simples de representar os itens seria através de dois arrays, um para os valores, outro para os pesos.
 
-::: Gabarito
-A maneira mais simples seria dois arrays, um para os valores, outro para os pesos.
 ``` c
 int valores[] = {2, 2, 3, 3};
 int pesos[] = {2, 2, 2, 3};
 ```
 Para o item **n**, o seu valor estaria em ```c valores[n - 1]``` e seu peso em ```c pesos[n - 1]```.
-:::
+O conteudo de ```c knapsack()``` seria semelhante ao pseudocódigo a seguir:
 
-???
+```txt
+se n == 0 ou W == 0
+    valor da mochila é 0
+senão
+    se peso do item <= W
+        subproblema1 = maior valor da mochila sem o item
+        subproblema2 = maior valor da mochila com o item
 
-Com isso, já temos todas as informações necessárias sobre quais são os argumentos dessa função e o que ela retorna.
-
-??? Checkpoint
-Escreva o cabeçalho da função ```c knapsack()```
-::: Gabarito
-```c 
-int knapsack(int valores[], int pesos[], int n, int W);
+        valor da mochila é o maior valor dentre subproblema1 e subproblema2
+    senão
+        valor da mochila é o maior valor da mochila sem o item
 ```
-:::
-???
+O pseudocódigo pode ser traduzido para **C** da seguinte forma:
 
-Vamos começar a pensar no conteudo da função ```c knapsack()```.
-
-[comment]: <> (imagem da animação)
-
-??? Checkpoint 
-Como seria a chamada recursiva de ```c knapsack()``` caso **não** adicionássemos o item **n** na nossa mochila? E casos adicionássemos?
-
-::: Gabarito
-```c 
-// Caso não adicionássemos
-knapsack(valores, pesos, n - 1, W);
-
-// Caso adicionássemos
-knapsack(valores, pesos, n - 1, W - pesos[n - 1]);
-```
-
-Quando adicionamos o item atual na mochila a capacidade atual da mochila é subtraida do peso do item atual. 
-:::
-???
-
-??? Checkpoint 
-Escreva o passo de ```c knapsack()```.
-
-Dica: Pense sobre o retorno das chamadas de ```c knapsack()``` e o que precisa ser feito com esse valores.
-
-::: Gabarito
-```c 
-int knapsack(int valores[], int pesos[], int n, int W) {
-    // ??? Base da recursão
-
-    // Passo da recursão
-    int sem_adicionar = knapsack(valores, pesos, n - 1, W);
-
-    int adicionando = valores[n - 1] + knapsack(valores, pesos, n - 1, W - pesos[n - 1]);
-
-    if (sem_adicionar > adicionando) {
-        return sem_adicionar;
-    }
-    return adicionando;
-}
-```
-
-Para uma solução com melhor legibilidade, poderíamos definir uma função ```c max()``` que devolve o maior valor entre dois inteiros. Além disso, para evitar chamadas recursivas desnecessárias, podemos verificar se o item **n** cabe ou não na mochila.
-
-```c 
+```c
 int max(int a, int b) {
     return a > b ? a : b;
 }
 
-int knapsack(int valores[], int pesos[], int n, int W) {
-    // ??? Base da recursão
-
-    // Passo da recursão
-    // Testa as duas possibilidades somente se o item cabe na mochila
-    if (W >= pesos[n - 1]) {
-        return max(knapsack(valores, pesos, n - 1, W), 
-        valores[n - 1] + knapsack(valores, pesos, n - 1, W - pesos[n - 1]));
-    }
-
-    // Se não verifica o próximo item
-    return knapsack(valores, pesos, n - 1, W);
-
-}
-```
-:::
-
-???
-
-Ainda temos um problema, a função que escrevemos não tem nenhuma base, o que levaria a uma recursão infinita! 
-
-??? Checkpoint
-Escreva a base da função ```c knpasack() ```
-
-:::Gabarito 
-```c
-int knapsack(int valores[], int pesos[], int n, int W) {
-    // Caso não tenha itens a serem colocados na mochila retornamos
-    // zero!
-    if (n == 0) {
-        return 0;
-    }
-    // Caso não tenha capacidade na mochila não conseguimos adicionar
-    // item nenhum! 
-    if (W == 0) {
-        return 0;
-    }
-
-    // Passo da recursão
-    
-}
-```
-
-Assim a versão final de ```c knapsack()``` é:
-
-
-```c
 int knapsack(int valores[], int pesos[], int n, int W) {
     if (n == 0 || W == 0) {
         return 0;
@@ -299,8 +187,6 @@ int knapsack(int valores[], int pesos[], int n, int W) {
     return knapsack(valores, pesos, n - 1, W);
 }
 ```
-:::
-???
 
 Finalmente temos um algoritmo que pode solucionar o problema da mochila! Mas será que essa é a melhor solução possível? 
 
@@ -378,7 +264,7 @@ Como vocês devem imaginar após calcular a complexidade da **solução recursiv
 ??? Checkpoint
 Existe algum jeito que podemos usar resultados de chamadas já feitas durante a rotina de uma função recursiva?
 
-Dica: Relembre o que foi feito na APS 3
+*Dica: Relembre o que foi feito na APS 3.*
 
 :::Gabarito
 Podemos utilizar uma matriz n x W para armezanar o resultado das chamadas de ```c knapsack()```! Essa estratégia é conhecida como **memoização**.   
@@ -388,36 +274,14 @@ Podemos utilizar uma matriz n x W para armezanar o resultado das chamadas de ```
 ??? Checkpoint
 Qual é a maneira mais adequada de inicializar uma matriz para esse problema? 
 
+*Dica: Pense em como saber se a célula da matriz já foi preenchida.*
+
 :::Gabarito
 Precisamos iniciar a matriz com valores inválidos para a mochila, para que a função ao ver que a matriz n x W possui um valor inválido saiba que aquela combinação de n e W é inédita. Para o caso do problema da mochila, a mochila não pode ter valores negativos, então -1 pode ser utilizado como valor inicial para a matriz. 
 :::
 ???
 
-??? Checkpoint
-Modifique a função da recursão por força bruta para que ela passe a utilizar a estratégia discutida nos checkpoint anteriores.
 
-:::Gabarito
-```c
-int knapsack(int valores[], int pesos[], int n, int W, int memo[][]) {
-    if (memo[n][W] != -1) {
-        return memo[n][W];
-    }
-    if (n == 0 || W == 0) {
-        return 0;
-    }
-
-    if (W >= pesos[n - 1]) {
-        memo[n][W] = max(knapsack(valores, pesos, n - 1, W), 
-        valores[n - 1] + knapsack(valores, pesos, n - 1, W - pesos[n - 1]));
-        return memo[n][W];
-    }
-
-    memo[n][W] = knapsack(valores, pesos, n - 1, W)
-    return memo[n][W];
-}
-```
-:::
-???
 
 Programação Dinâmica
 --------------------
@@ -440,12 +304,11 @@ São os mesmos casos considerados na **base da recursão!**
 ???
 
 ??? Checkpoint
-<!-- Ainda pensando sobre como preencher a matriz, como podemos preencher uma célula para o caso em que o item analisado não cabe na mochila? -->
 Ainda pensando sobre como preencher a matriz, vamos considerar o caso em que o item não cabe na mochila. Qual o valor da mochila para esse caso? 
 
 Como podemos usar a matriz para descobrir esse valor?
 
-Dica: Assim como o caso anterior, a ideia por trás é muito semelhante ao o que é feito no algoritmo recursivo. 
+*Dica: Assim como o caso anterior, a ideia por trás é muito semelhante ao o que é feito no algoritmo recursivo.*
 ::: Gabarito
 O valor da mochila para esse caso é o melhor valor possível para a mochila desconsiderando o item atual.
 
@@ -459,6 +322,8 @@ E como estamos preenchendo a matriz de **baixo para cima** já sabemos que valor
 E como você já deve ter adivinhado: Qual o valor da mochila para o caso em que o item cabe na mochila?
 
 Como podemos usar a matriz para descobrir esse valor?
+
+*Dica: pense em como acessar o valores de diferentes capacidades da mochila.*
 
 ::: Gabarito
 O valor da mochila é o maior valor dentre as duas opções a seguir: a melhor combinação vista até então sem o item, a melhor combinação dos itens vistos até então com o item atual.
@@ -493,10 +358,8 @@ Podemos resumir o processo de preenchimento da matriz da seguinte forma:
 
 <!-- Animação de preencher a matriz -->
 
-??? Checkpoint
-Agora que você já sabe como é feito o preenchimento da matriz, escreva uma versão de ```c knapsack()``` utilizando programação dinâmica!
-::: Gabarito
-Além de trocar a abordagem recursiva pela abordagem iterativa, não precisamos inicializar a matriz M com valores negativos!
+Agora já podemos escrever uma versão de ```c knapsack()``` utilizando programação dinâmica!
+
 ```c
 int knapsack(int valores[], int pesos[], int n, int W) {
     int M[n + 1][W + 1];
@@ -514,14 +377,13 @@ int knapsack(int valores[], int pesos[], int n, int W) {
     return M[n][W];
 }
 ```
-:::
-???
+Além de trocar a abordagem recursiva pela abordagem iterativa, não precisamos inicializar a matriz M com valores negativos!
 
 Legal, conseguimos escrever um algoritmo de programação dinâmica para o problema da mochila! Mas será que depois de todo esse trabalho a complexidade temporal do nosso algoritmo realmente ficou melhor?
 
 ??? Checkpoint
 Calcule a complexidade ***O*** da solução de programação dinâmica usando as técnicas vistas em aula.
-:::
+::: Gabarito
 Estimar as quantidades de iterações do loop externo em função de n:
 ```txt
 Quantidade de iterações do loop externo (x):
