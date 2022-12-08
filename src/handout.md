@@ -290,7 +290,7 @@ Ufa! Conseguimos resolver o problema das várias chamadas repetidas utilizando u
 
 Esse método de transformar problemas recursivos em iterativos é conhecido como **programação dinâmica**. Ao invés de resolver o problema de maneira recursiva, vamos resolvê-los de maneira sequencial, utilizando o que já foi calculado para obter o resultado atual. A estratégia continua basicamente a mesma: analisar se o maior valor é atingido colocando ou não o item atual na mochila.  
 
-Para uma matriz **n x W**, cada linha **n** representa uma quantidade de itens analisados, e cada capacidade de **zero até W**, uma capacidade para a mochila, e cada célula o **melhor valor** que cabe na mochila para aquela combinação n e W! Vamos considerar como podemos preencher essa matriz considerando que ao contrário da abordagem recursiva, estamos resolvendo o problema de baixo para cima.
+Para uma matriz **n x W**, cada linha **n** representa uma quantidade de itens analisados, e cada coluna de **zero até W**, uma capacidade para a mochila, e cada célula o **melhor valor** que cabe na mochila para aquela combinação n e W! Vamos considerar como podemos preencher essa matriz considerando que ao contrário da abordagem recursiva, estamos resolvendo o problema de baixo para cima.
 
 ??? Checkpoint
 Nos casos em que a capacidade da mochila (**W**) é zero e nos casos em que não temos itens a serem analisados (**n = 0**) qual deverá ser o valor da mochila? O que esses casos representavam na solução recursiva do problema?
@@ -332,7 +332,7 @@ E assim como na abordagem recursiva para descobrir a resposta nós vamos conside
 
 Caso não colocássemos, vamos considerar o maior valor possível para aquela capacidade. Esse valor está na célula com n - 1 e W. 
 
-Caso colocássemos, vamos considerar a soma do maior valor possível para a mochila que cabe o item, somado do próprio valor do item. Esse valor está na célula n - 1 e W - peso do item. Ai está o pulo do gato da nossa matriz!
+Caso colocássemos, vamos considerar a soma do maior valor possível para a mochila que cabe o item com o próprio valor do item. O maior valor possível para uma mochila que cabe o item está na célula n - 1 e W - peso do item. Ai está o pulo do gato da nossa matriz!
 
 O novo valor da célula será o maior valor dentre essas duas opções. 
 
